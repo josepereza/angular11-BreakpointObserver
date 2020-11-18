@@ -35,9 +35,9 @@ Next, you can use BreakpointObserver to observe the screen-size changes insetad 
 
 Note: BreakpointObserver is an Angular service that can be injected in any component and provides the isMatched() and observe() methods.
 
-Injecting BreakpointObserver
+## Injecting BreakpointObserver
 Let's inject BreakpointObserver as breakpointObserver via the component constructor:
-
+```
 @Component({ /* [...] */ })
 export class AppComponent implements OnInit {
 
@@ -70,6 +70,7 @@ ngOnInit() {
       }
     });
   }
+  ```
 The observe() method returns an RxJS Observable of type BreakpointState that we need to subscribe to for observing when the viewport of your application changes.
 
 The Breakpoints object provides the following properties that correspond to the common media queries:
@@ -80,7 +81,7 @@ Breakpoints.Medium: min-width equals 960px and max-width equals 1279.99px
 Breakpoints.Large: min-width equals 1280px and max-width equals 1919.99px
 Breakpoints.XLarge: min-width equals 1920px
 Instead of using the Breakpoints object which provides us of keys for common breakpoints, we can also use usual CSS media queries as follows:
-
+```
 @Component({ /* [...] */ })
 export class AppComponent implements OnInit {
   constructor(public breakpointObserver: BreakpointObserver) {}
@@ -97,8 +98,9 @@ export class AppComponent implements OnInit {
       });
   }
 }
+```
 We can also use the isMatching() method of BreakpointObserver for simple use cases:
-
+```
 @Component({ /* [...] */ })
 export class AppComponent implements OnInit {
   constructor(public breakpointObserver: BreakpointObserver) {}
@@ -108,6 +110,7 @@ ngOnInit() {
     console.log('The 900px viewport matched!');
   }
 }
+```
 We have seen how to work with responsive images in Angular 9 using the CDK and BreakpointObserver which is part of the Layout module that allows you to react and adapt your UI to different viewport sizes in Angular.
 ## Development server
 
