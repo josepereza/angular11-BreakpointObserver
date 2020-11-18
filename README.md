@@ -8,7 +8,7 @@ Before you can use BreakpointObserver, you need to install the Angular’s CDK L
 $ cd angular-responsive-image-breakpoints
 $ npm install @angular/cdk
 Next, open the src/app/app.module.ts file and add LayoutModule in the imports array:
-
+```
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -28,9 +28,11 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+```
 Now, you are ready to use the Layout module in your Angular 9 application. Open the src/app/app.component.ts file and start by importing the BreakpointObserver and Breakpoints APIs:
-
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+```
+import { BreakpointObserver, Breakpoints,BreakpointState } from '@angular/cdk/layout';
+```
 Next, you can use BreakpointObserver to observe the screen-size changes insetad of using CSS media queries.
 
 Note: BreakpointObserver is an Angular service that can be injected in any component and provides the isMatched() and observe() methods.
